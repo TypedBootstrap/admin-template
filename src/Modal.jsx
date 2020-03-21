@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hideModal } from 'store/actions';
-import { AlertModal, ConfirmModal, DeleteModal } from 'components/modals';
+import modals from 'config/modals';
 
 /**
  * Modal
@@ -11,13 +11,7 @@ const Modal = ({ isOpen, modalProps, modalType, hideModal }) => {
         return null;
     }
 
-    const MODAL_TYPES = {
-        alert: AlertModal,
-        confirm: ConfirmModal,
-        delete: DeleteModal
-    };
-
-    const Modal = MODAL_TYPES[modalType];
+    const Modal = modals[modalType];
 
     if (typeof Modal === 'undefined') {
         return null;
