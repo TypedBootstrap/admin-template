@@ -1,94 +1,98 @@
 .Sidebar {
-    background-color: $gray-900;
-    min-height: calc(100vh - #{$navbar-base-height});
-    width: $sidebar-collapsed-width !important;
-    @include sidebar-icons;
+  background-color: $gray-900;
+  min-height: calc(100vh - #{$navbar-base-height});
+  width: $sidebar-collapsed-width !important;
+  @include sidebar-icons;
+  .nav-item {
+    .nav-link {
+      color: fade-out($white, 0.5);
+      &:active,
+      &:focus,
+      &:hover {
+        color: fade-out($white, 0.25);
+      }
+    }
+  }
+  &.toggled {
+    overflow: hidden;
+    width: 0 !important;
+  }
+}
+@media (min-width: 768px) {
+  .Sidebar {
+    width: $sidebar-base-width !important;
+    .nav-item {
+      &.active {
+        .nav-link {
+          color: $white;
+        }
+      }
+      &.dropdown {
+        .dropdown-toggle {
+          &::after {
+            border: 0;
+            content: "\f105";
+            float: right;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            text-align: center;
+            vertical-align: 0;
+            width: 1rem;
+          }
+        }
+        &.show {
+          .dropdown-toggle::after {
+            content: "\f107";
+          }
+        }
+        &.no-arrow {
+          .dropdown-toggle::after {
+            display: none;
+          }
+        }
+      }
+      .nav-link {
+        &:focus {
+          outline: none;
+        }
+        .badge {
+          font-size: 0.5rem;
+          font-weight: 400;
+          margin-left: 0.75rem;
+          position: absolute;
+          top: 0.3rem;
+        }
+      }
+    }
     .nav-item {
       .nav-link {
-        color: fade-out($white, 0.5);
-        &:active,
-        &:focus,
-        &:hover {
-          color: fade-out($white, 0.25);
+        display: block;
+        padding: 1rem;
+        text-align: left;
+        width: $sidebar-base-width;
+
+        svg {
+          margin-right: 10px;
         }
+
+        span {
+          display: inline;
+          font-size: 1rem;
+        }
+      }
+      .dropdown-menu {
+        margin: 0 1rem;
+        position: static !important;
+        top: 0;
+      }
+      &.dropdown .dropdown-toggle::after {
+        display: block;
       }
     }
     &.toggled {
-      overflow: hidden;
-      width: 0 !important;
+      overflow: visible;
+      width: $sidebar-collapsed-width !important;
+      @include sidebar-icons;
     }
   }
-  @media (min-width: 768px) {
-    .Sidebar {
-      width: $sidebar-base-width !important;
-      .nav-item {
-        &.active {
-          .nav-link {
-            color: $white;
-          }
-        }
-        &.dropdown {
-          .dropdown-toggle {
-            &::after {
-              border: 0;
-              content: "\f105";
-              float: right;
-              font-family: "Font Awesome 5 Free";
-              font-weight: 900;
-              text-align: center;
-              vertical-align: 0;
-              width: 1rem;
-            }
-          }
-          &.show {
-            .dropdown-toggle::after {
-              content: "\f107";
-            }
-          }
-          &.no-arrow {
-            .dropdown-toggle::after {
-              display: none;
-            }
-          }
-        }
-        .nav-link {
-          &:focus {
-            outline: none;
-          }
-          .badge {
-            font-size: 0.5rem;
-            font-weight: 400;
-            margin-left: 0.75rem;
-            position: absolute;
-            top: 0.3rem;
-          }
-        }
-      }
-      .nav-item {
-        .nav-link {
-          display: block;
-          padding: 1rem;
-          text-align: left;
-          width: $sidebar-base-width;
-          span {
-            display: inline;
-            font-size: 1rem;
-          }
-        }
-        .dropdown-menu {
-          margin: 0 1rem;
-          position: static !important;
-          top: 0;
-        }
-        &.dropdown .dropdown-toggle::after {
-          display: block;
-        }
-      }
-      &.toggled {
-        overflow: visible;
-        width: $sidebar-collapsed-width !important;
-        @include sidebar-icons;
-      }
-    }
-  }
-  
+}
