@@ -1,0 +1,21 @@
+.Page {
+  .wrapper {
+    display: flex;
+    .content-wrapper {
+      padding-bottom: $sticky-footer-height;
+      padding-top: 1rem;
+      overflow-x: hidden;
+      width: 100%;
+    }
+  }
+  &.sidebar-toggled {
+    .StickyFooter {
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .StickyFooter {
+        width: calc(100% - #{$sidebar-collapsed-width});
+      }
+    }
+  }
+}

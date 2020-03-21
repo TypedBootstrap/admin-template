@@ -1,0 +1,16 @@
+// Import Custom Variables
+@import "./scss/variables";
+@import "./scss/mixins";
+@import "./scss/global";
+@import "./scss/utilities";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import Custom SCSS
+@import "./scss/components/App";
+@import "./scss/components/IconCard";
+@import "./scss/components/Navigation";
+@import "./scss/components/Page";
+@import "./scss/components/Sidebar";
+@import "./scss/components/StickyFooter";

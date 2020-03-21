@@ -1,0 +1,2 @@
+export const TOGGLE_SETTING = 'TOGGLE_SETTING';
+export const CHANGE_SETTING = 'CHANGE_SETTING';
