@@ -1,4 +1,10 @@
 .StickyFooter {
+  .sidebar-toggled & {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: calc(100% - #{$sidebar-collapsed-width});
+    }
+  }
   background-color: $gray-200;
   bottom: 0;
   display: flex;
