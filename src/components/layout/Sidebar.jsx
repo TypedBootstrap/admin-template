@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 import {
     DropdownItem,
     DropdownMenu,
@@ -8,12 +7,63 @@ import {
     Nav,
     NavItem,
     NavLink,
-    NavbarText,
     UncontrolledDropdown
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, withRouter } from 'react-router-dom';
+import classnames from 'classnames';
 import menu from 'config/menu';
+
+/**
+ * Sidebar Item
+ */
+const SidebarItem = ({ active, item }) => (
+    <NavItem active={active}>
+        <NavLink tag={Link} to={item.path}>
+            <FontAwesomeIcon icon={item.icon} fixedWidth />
+            <span>{item.name}</span>
+        </NavLink>
+    </NavItem>
+);
+
+/**
+ * Sidebar Sub Menu
+ */
+const SidebarSubMenu = ({ active, item }) => (
+    <UncontrolledDropdown active={active} nav inNavbar>
+        <DropdownToggle nav>
+            <FontAwesomeIcon icon={item.icon} fixedWidth />
+            <span>{item.name}</span>
+        </DropdownToggle>
+        <DropdownMenu>
+            {item.subMenu.map((item, i) => {
+                if (item.heading) {
+                    return <SidebarSubMenuItemHeading key={i} heading={item.heading} />;
+                }
+
+                return <SidebarSubMenuItem key={i} item={item} />;
+            })}
+        </DropdownMenu>
+    </UncontrolledDropdown>
+);
+
+/**
+ * Sidebar Sub Menu Item
+ */
+const SidebarSubMenuItem = ({ item }) => (
+    <DropdownItem tag={Link} to={item.path}>
+        {item.name}
+    </DropdownItem>
+);
+
+/**
+ * Sidebar Sub Menu Item Header
+ */
+const SidebarSubMenuItemHeading = ({ heading }) => (
+    <DropdownItem tag="h6" header>
+        {heading}
+    </DropdownItem>
+);
 
 /**
  * Sidebar
@@ -36,51 +86,14 @@ const Sidebar = ({ location, sidebarToggled }) => {
         <div className={classnames('Sidebar', { toggled: sidebarToggled })}>
             <Nav navbar>
                 {menu.map((item, i) => {
-                    if (item.heading) {
-                        return <NavbarText key={i}>{item.heading}</NavbarText>;
-                    } else if (!item.subMenu) {
-                        return (
-                            <NavItem key={i} active={isRouteActive(item.path)}>
-                                <NavLink tag={Link} to={item.path}>
-                                    <FontAwesomeIcon icon={item.icon} fixedWidth />
-                                    <span>{item.name}</span>
-                                </NavLink>
-                            </NavItem>
-                        );
-                    } else if (item.subMenu) {
-                        return (
-                            <UncontrolledDropdown
-                                key={i}
-                                active={isRouteActive(getSubMenuRoutes(item))}
-                                nav
-                                inNavbar>
-                                <DropdownToggle nav>
-                                    <FontAwesomeIcon icon={item.icon} fixedWidth />
-                                    <span>{item.name}</span>
-                                </DropdownToggle>
-                                <DropdownMenu>
-                                    {item.subMenu.map((item, i) => {
-                                        if (item.heading) {
-                                            return (
-                                                <DropdownItem key={i} tag="h6" header>
-                                                    {item.heading}
-                                                </DropdownItem>
-                                            );
-                                        }
+                    if (!item.subMenu) {
+                        const isActive = isRouteActive(item.path);
 
-                                        return (
-                                            <DropdownItem
-                                                key={i}
-                                                active={isRouteActive(item.path)}
-                                                tag={Link}
-                                                to={item.path}>
-                                                {item.name}
-                                            </DropdownItem>
-                                        );
-                                    })}
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-                        );
+                        return <SidebarItem key={i} active={isActive} item={item} />;
+                    } else if (item.subMenu) {
+                        const isActive = isRouteActive(getSubMenuRoutes(item));
+
+                        return <SidebarSubMenu key={i} active={isActive} item={item} />;
                     }
 
                     return null;
