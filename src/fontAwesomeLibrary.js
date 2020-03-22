@@ -1,22 +1,28 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-    faChartArea,
+    faBars,
+    faBell,
     faComments,
+    faEnvelope,
     faFolder,
     faLifeRing,
     faList,
+    faSearch,
     faShoppingCart,
-    faTable,
-    faTachometerAlt
+    faTachometerAlt,
+    faUserCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-    faChartArea,
+    faBars,
+    faBell,
     faComments,
+    faEnvelope,
     faFolder,
     faLifeRing,
     faList,
+    faSearch,
     faShoppingCart,
-    faTable,
-    faTachometerAlt
+    faTachometerAlt,
+    faUserCircle
 );

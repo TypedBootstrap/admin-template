@@ -7,14 +7,16 @@ import {
     DropdownItem,
     DropdownMenu,
     DropdownToggle,
+    Form,
+    Input,
+    InputGroup,
+    InputGroupAddon,
     Nav,
     Navbar,
     NavbarBrand,
     UncontrolledDropdown
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faBell, faEnvelope, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import SearchForm from 'components/SearchForm';
 
 /**
  * Navigation
@@ -28,19 +30,28 @@ const Navigation = ({ toggleSetting }) => {
 
     return (
         <Navbar className="Navigation" color="primary" dark expand sticky="top">
-            <NavbarBrand>React Admin</NavbarBrand>
+            <NavbarBrand className="o-hidden">React Admin</NavbarBrand>
             <Button
                 className="text-white order-1 order-sm-0"
                 color="link"
                 size="sm"
                 onClick={toggleSidebar}>
-                <FontAwesomeIcon icon={faBars} />
+                <FontAwesomeIcon icon="bars" />
             </Button>
-            <SearchForm />
+            <Form className="d-none d-md-inline-block ml-auto mr-0 mr-md-3 my-2 my-md-0" inline>
+                <InputGroup>
+                    <Input type="text" placeholder="Search for..." />
+                    <InputGroupAddon addonType="append">
+                        <Button color="primary" type="button">
+                            <FontAwesomeIcon icon="search" />
+                        </Button>
+                    </InputGroupAddon>
+                </InputGroup>
+            </Form>
             <Nav className="ml-auto ml-md-0" navbar>
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>
-                        <FontAwesomeIcon icon={faBell} fixedWidth />
+                        <FontAwesomeIcon icon="bell" fixedWidth />
                         <Badge color="danger">9+</Badge>
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -52,7 +63,7 @@ const Navigation = ({ toggleSetting }) => {
                 </UncontrolledDropdown>
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>
-                        <FontAwesomeIcon icon={faEnvelope} fixedWidth />
+                        <FontAwesomeIcon icon="envelope" fixedWidth />
                         <Badge color="danger">7</Badge>
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -64,7 +75,7 @@ const Navigation = ({ toggleSetting }) => {
                 </UncontrolledDropdown>
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>
-                        <FontAwesomeIcon icon={faUserCircle} fixedWidth />
+                        <FontAwesomeIcon icon="user-circle" fixedWidth />
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem href="/#">Settings</DropdownItem>
