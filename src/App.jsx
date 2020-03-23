@@ -13,8 +13,8 @@ const App = () => (
         <Provider store={store}>
             <HashRouter>
                 <Routes />
+                <Modal />
             </HashRouter>
-            <Modal />
         </Provider>
     </div>
 );
