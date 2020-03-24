@@ -1,15 +1,15 @@
 .Sidebar {
-  background-color: $gray-900;
+  background-color: $sidebar-bg;
   min-height: calc(100vh - #{$navbar-base-height});
   width: $sidebar-collapsed-width !important;
   @include sidebar-icons;
   .nav-item {
     .nav-link {
-      color: fade-out($white, 0.5);
+      color: $sidebar-color;
       &:active,
       &:focus,
       &:hover {
-        color: fade-out($white, 0.25);
+        color: $sidebar-hover-color;
       }
     }
   }
