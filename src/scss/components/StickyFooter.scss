@@ -2,21 +2,22 @@
   .sidebar-toggled & {
     width: 100%;
     @media (min-width: 768px) {
-      width: calc(100% - #{$sidebar-collapsed-width});
+      width: $sticky-footer-collapsed-width;
     }
   }
-  background-color: $gray-200;
+  background-color: $sticky-footer-bg;
   bottom: 0;
+  color: $sticky-footer-color;
   display: flex;
   height: $sticky-footer-height;
   position: absolute;
   right: 0;
-  width: calc(100% - #{$sidebar-collapsed-width});
+  width: $sticky-footer-collapsed-width;
   .copyright {
     font-size: 0.8rem;
     line-height: 1;
   }
   @media (min-width: 768px) {
-    width: calc(100% - #{$sidebar-base-width});
+    width: $sticky-footer-base-width;
   }
 }
