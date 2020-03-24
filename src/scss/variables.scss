@@ -1,3 +1,4 @@
+// Navbar
 $navbar-base-height: 56px;
 
 // Sidebar
@@ -10,6 +11,6 @@ $sidebar-collapsed-width: 100px;
 // Sticky footer
 $sticky-footer-bg: $gray-200;
 $sticky-footer-color: $gray-600;
-$sticky-footer-height: 80px;
+$sticky-footer-height: 100px;
 $sticky-footer-base-width: calc(100% - #{$sidebar-base-width});
 $sticky-footer-collapsed-width: calc(100% - #{$sidebar-collapsed-width});
