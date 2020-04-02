@@ -29,7 +29,7 @@ const Navigation = ({ toggleSetting }) => {
     };
 
     return (
-        <Navbar className="Navigation" color="primary" dark expand sticky="top">
+        <Navbar className="Navigation" color="primary-dark" dark expand sticky="top">
             <NavbarBrand className="o-hidden">React Admin</NavbarBrand>
             <Button
                 className="text-white order-1 order-sm-0"
