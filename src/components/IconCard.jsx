@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
  */
 const IconCard = ({ color, icon, linkText, path, title }) => (
     <div className="IconCard">
-        <Card color={color} className="text-white o-hidden h-100">
+        <Card color={color} className="o-hidden h-100">
             <CardBody>
                 {icon && (
                     <div className="card-body-icon">
