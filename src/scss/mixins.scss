@@ -1,3 +1,18 @@
+@mixin background-variant($bgcolor, $text-color: #fff) {
+  & {
+    background-color: custom-colour($bgcolor);
+    color: $text-color !important;
+  }
+  &-light {
+    background-color: #{custom-colour($bgcolor + "-light")};
+    color: $text-color !important;
+  }
+  &-dark {
+    background-color: #{custom-colour($bgcolor + "-dark")};
+    color: $text-color !important;
+  }
+}
+
 @mixin rotate {
   transform: rotate(15deg);
 }

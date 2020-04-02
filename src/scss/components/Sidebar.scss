@@ -1,6 +1,6 @@
 .Sidebar {
   background-color: $sidebar-bg;
-  min-height: calc(100vh - #{$navbar-base-height});
+  min-height: $sidebar-base-height;
   width: $sidebar-collapsed-width !important;
   @include sidebar-icons;
   .nav-item {

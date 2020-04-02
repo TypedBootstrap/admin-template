@@ -1,6 +1,12 @@
 // Import Custom Variables
 @import "./scss/variables";
+@import "./scss/functions";
 @import "./scss/mixins";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Import Custom Variables
 @import "./scss/global";
 @import "./scss/utilities";
 

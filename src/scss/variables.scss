@@ -1,16 +1,135 @@
-// Navbar
-$navbar-base-height: 56px;
+// COLOUR SYSTEM
+// ==================================================
+$white                         : #fff !default;
+$gray-100                      : #f8f9fa !default;
+$gray-200                      : #ecf0f1 !default;
+$gray-300                      : #dee2e6 !default;
+$gray-400                      : #ced4da !default;
+$gray-500                      : #b4bcc2 !default;
+$gray-600                      : #95a5a6 !default;
+$gray-700                      : #7b8a8b !default;
+$gray-800                      : #343a40 !default;
+$gray-900                      : #212529 !default;
+$black                         : #000 !default;
 
-// Sidebar
-$sidebar-bg: $gray-900;
-$sidebar-color: fade-out($white, 0.5);
-$sidebar-hover-color: fade-out($white, 0.25);
-$sidebar-base-width: 250px;
-$sidebar-collapsed-width: 100px;
+$blue                          : #325D88 !default;
+$indigo                        : #6610f2 !default;
+$purple                        : #6f42c1 !default;
+$pink                          : #e83e8c !default;
+$red                           : #d9534f !default;
+$orange                        : #F47C3C !default;
+$yellow                        : #ffc107 !default;
+$green                         : #93C54B !default;
+$teal                          : #20c997 !default;
+$cyan                          : #29ABE0 !default;
 
-// Sticky footer
-$sticky-footer-bg: $gray-200;
-$sticky-footer-color: $gray-600;
-$sticky-footer-height: 100px;
-$sticky-footer-base-width: calc(100% - #{$sidebar-base-width});
-$sticky-footer-collapsed-width: calc(100% - #{$sidebar-collapsed-width});
+$primary                       : #23b7e5 !default;
+$secondary                     : darken($primary, 15%) !default;
+$success                       : #27c24c !default;
+$info                          : #23b7e5 !default;
+$warning                       : #ff902b !default;
+$danger                        : #f05050 !default;
+$light                         : $gray-200 !default;
+$dark                          : #3a3f51 !default;
+
+$primary-light                 : lighten($primary, 15%) !default;
+$secondary-light               : lighten($secondary, 15%) !default;
+$success-light                 : lighten($success, 15%) !default;
+$info-light                    : lighten($info, 15%) !default;
+$warning-light                 : lighten($warning, 15%) !default;
+$danger-light                  : lighten($danger, 15%) !default;
+$blue-light                    : lighten($blue, 15%) !default;
+$indigo-light                  : lighten($indigo, 15%) !default;
+$purple-light                  : lighten($purple, 15%) !default;
+$pink-light                    : lighten($pink, 15%) !default;
+$red-light                     : lighten($red, 15%) !default;
+$orange-light                  : lighten($orange, 15%) !default;
+$yellow-light                  : lighten($yellow, 15%) !default;
+$green-light                   : lighten($green, 15%) !default;
+$teal-light                    : lighten($teal, 15%) !default;
+$cyan-light                    : lighten($cyan, 15%) !default;
+
+$primary-dark                  : darken($primary, 15%) !default;
+$secondary-dark                : darken($secondary, 15%) !default;
+$success-dark                  : darken($success, 15%) !default;
+$info-dark                     : darken($info, 15%) !default;
+$warning-dark                  : darken($warning, 15%) !default;
+$danger-dark                   : darken($danger, 15%) !default;
+$blue-dark                     : darken($blue, 15%) !default;
+$indigo-dark                   : darken($indigo, 15%) !default;
+$purple-dark                   : darken($purple, 15%) !default;
+$pink-dark                     : darken($pink, 15%) !default;
+$red-dark                      : darken($red, 15%) !default;
+$orange-dark                   : darken($orange, 15%) !default;
+$yellow-dark                   : darken($yellow, 15%) !default;
+$green-dark                    : darken($green, 15%) !default;
+$teal-dark                     : darken($teal, 15%) !default;
+$cyan-dark                     : darken($cyan, 15%) !default;
+
+$colors: (
+    "blue":                     $blue,
+    "indigo":                   $indigo,
+    "purple":                   $purple,
+    "pink":                     $pink,
+    "red":                      $red,
+    "orange":                   $orange,
+    "yellow":                   $yellow,
+    "green":                    $green,
+    "teal":                     $teal,
+    "cyan":                     $cyan,
+    "primary":                  $primary,
+    "secondary":                $secondary,
+    "success":                  $success,
+    "info":                     $info,
+    "warning":                  $warning,
+    "danger":                   $danger,
+    "primary-light":            $primary-light,
+    "primary-dark":             $primary-dark,
+    "secondary-light":          $secondary-light,
+    "secondary-dark":           $secondary-dark,
+    "success-light":            $success-light,
+    "success-dark":             $success-dark,
+    "info-light":               $info-light,
+    "info-dark":                $info-dark,
+    "warning-light":            $warning-light,
+    "warning-dark":             $warning-dark,
+    "danger-light":             $danger-light,
+    "danger-dark":              $danger-dark,
+    "blue-light":               $blue-light,
+    "blue-dark":                $blue-dark,
+    "indigo-light":             $indigo-light,
+    "indigo-dark":              $indigo-dark,
+    "purple-light":             $purple-light,
+    "purple-dark":              $purple-dark,
+    "pink-light":               $pink-light,
+    "pink-dark":                $pink-dark,
+    "red-light":                $red-light,
+    "red-dark":                 $red-dark,
+    "orange-light":             $orange-light,
+    "orange-dark":              $orange-dark,
+    "yellow-light":             $yellow-light,
+    "yellow-dark":              $yellow-dark,
+    "green-light":              $green-light,
+    "green-dark":               $green-dark,
+    "teal-light":               $teal-light,
+    "teal-dark":                $teal-dark,
+    "cyan-light":               $cyan-light,
+    "cyan-dark":                $cyan-dark,
+);
+
+// SIDEBAR
+// ==================================================
+$sidebar-bg                    : $dark !default;
+$sidebar-color                 : fade-out($white, 0.5) !default;
+$sidebar-hover-color           : fade-out($white, 0.25) !default;
+$sidebar-base-height           : calc(100vh - 56px) !default;
+$sidebar-base-width            : 250px !default;
+$sidebar-collapsed-width       : 100px !default;
+
+// STICKY FOOTER
+// ==================================================
+$sticky-footer-bg              : $gray-200 !default;
+$sticky-footer-color           : $gray-600 !default;
+$sticky-footer-height          : 100px !default;
+$sticky-footer-base-width      : calc(100% - #{$sidebar-base-width}) !default;
+$sticky-footer-collapsed-width : calc(100% - #{$sidebar-collapsed-width}) !default;
