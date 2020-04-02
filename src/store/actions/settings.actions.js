@@ -1,7 +1,7 @@
 import { CHANGE_SETTING, TOGGLE_SETTING } from 'config/actions';
 
 /**
- * Change a setting value 
+ * Change a setting value
  */
 export const changeSetting = (name, value) => dispatch =>
     dispatch({
