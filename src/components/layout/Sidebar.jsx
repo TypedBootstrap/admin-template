@@ -83,7 +83,7 @@ const Sidebar = ({ location, sidebarToggled }) => {
     };
 
     return (
-        <div className={classnames('Sidebar', { toggled: sidebarToggled })}>
+        <div className={classnames('sidebar', { toggled: sidebarToggled })}>
             <Nav navbar>
                 {menu.map((item, i) => {
                     if (!item.subMenu) {

@@ -1,15 +1,21 @@
-.Sidebar {
+// SIDEBAR
+// ==================================================
+.sidebar {
   background-color: $sidebar-bg;
   min-height: $sidebar-base-height;
   width: $sidebar-collapsed-width !important;
-  @include sidebar-icons;
+  @include sidebar-toggled;
   .nav-item {
     .nav-link {
       color: $sidebar-color;
-      &:active,
-      &:focus,
-      &:hover {
+      @include hover-focus() {
         color: $sidebar-hover-color;
+      }
+    }
+    &.active {
+      &,
+      > .nav-link {
+        color: $sidebar-active-color;
       }
     }
   }
@@ -17,63 +23,19 @@
     overflow: hidden;
     width: 0 !important;
   }
-}
-@media (min-width: 768px) {
-  .Sidebar {
+
+  @media (min-width: 768px) {
     width: $sidebar-base-width !important;
-    .nav-item {
-      &.active {
-        .nav-link {
-          color: $white;
-        }
-      }
-      &.dropdown {
-        .dropdown-toggle {
-          &::after {
-            border: 0;
-            content: "\f105";
-            float: right;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            text-align: center;
-            vertical-align: 0;
-            width: 1rem;
-          }
-        }
-        &.show {
-          .dropdown-toggle::after {
-            content: "\f107";
-          }
-        }
-        &.no-arrow {
-          .dropdown-toggle::after {
-            display: none;
-          }
-        }
-      }
-      .nav-link {
-        &:focus {
-          outline: none;
-        }
-        .badge {
-          font-size: 0.5rem;
-          font-weight: 400;
-          margin-left: 0.75rem;
-          position: absolute;
-          top: 0.3rem;
-        }
-      }
-    }
     .nav-item {
       .nav-link {
         display: block;
         padding: 1rem;
         text-align: left;
         width: $sidebar-base-width;
-
         span {
           display: inline;
           font-size: 1rem;
+          padding-left: 1rem;
         }
       }
       .dropdown-menu {
@@ -81,14 +43,11 @@
         position: static !important;
         top: 0;
       }
-      &.dropdown .dropdown-toggle::after {
-        display: block;
-      }
     }
     &.toggled {
       overflow: visible;
       width: $sidebar-collapsed-width !important;
-      @include sidebar-icons;
+      @include sidebar-toggled;
     }
   }
 }

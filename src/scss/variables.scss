@@ -122,6 +122,7 @@ $colors: (
 $sidebar-bg                    : $dark !default;
 $sidebar-color                 : fade-out($white, 0.5) !default;
 $sidebar-hover-color           : fade-out($white, 0.25) !default;
+$sidebar-active-color          : $sidebar-hover-color !default;
 $sidebar-base-height           : calc(100vh - 56px) !default;
 $sidebar-base-width            : 250px !default;
 $sidebar-collapsed-width       : 100px !default;
