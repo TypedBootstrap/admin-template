@@ -68,7 +68,7 @@ const SidebarSubMenuItemHeading = ({ heading }) => (
 /**
  * Sidebar
  */
-const Sidebar = ({ location, sidebarToggled }) => {
+const Sidebar = ({ location, toggled }) => {
     const isRouteActive = paths => {
         paths = Array.isArray(paths) ? paths : [paths];
         if (paths.indexOf(location.pathname) > -1) {
@@ -83,7 +83,7 @@ const Sidebar = ({ location, sidebarToggled }) => {
     };
 
     return (
-        <div className={classnames('sidebar', { toggled: sidebarToggled })}>
+        <div className={classnames('sidebar', { toggled })}>
             <Nav navbar>
                 {menu.map((item, i) => {
                     if (!item.subMenu) {
@@ -103,6 +103,6 @@ const Sidebar = ({ location, sidebarToggled }) => {
     );
 };
 
-const mapStateToProps = store => ({ ...store.settings });
+const mapStateToProps = store => ({ toggled: store.settings.sidebarToggled });
 
 export default connect(mapStateToProps)(withRouter(Sidebar));
