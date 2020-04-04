@@ -1,5 +1,7 @@
 # React Admin
 
+![alt text](https://live.staticflickr.com/65535/49734004568_cddbbc36d5_b.jpg "React Admin Preview")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
