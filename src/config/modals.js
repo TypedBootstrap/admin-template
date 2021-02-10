@@ -1,7 +1,9 @@
 import { AlertModal, ConfirmModal, DeleteModal } from 'components/modals';
 
-export default {
+const modals = {
     alert: AlertModal,
     confirm: ConfirmModal,
-    delete: DeleteModal
+    delete: DeleteModal,
 };
+
+export default modals;
