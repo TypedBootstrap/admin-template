@@ -1,7 +1,7 @@
 import { CHANGE_SETTING, TOGGLE_SETTING } from 'config/actions';
 
 const INITIAL_STATE = {
-    sidebarToggled: false,
+    sidebarToggled: false
 };
 
 const settingsReducer = (state = INITIAL_STATE, action) => {

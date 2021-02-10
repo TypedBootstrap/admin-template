@@ -2,21 +2,21 @@ const menu = [
     {
         name: 'Dashboard',
         icon: 'tachometer-alt',
-        path: '/',
+        path: '/'
     },
     {
         name: 'Pages',
         icon: 'folder',
         subMenu: [
             {
-                heading: 'Other Pages:',
+                heading: 'Other Pages:'
             },
             {
                 name: 'Blank Page',
-                path: '/blank',
-            },
-        ],
-    },
+                path: '/blank'
+            }
+        ]
+    }
 ];
 
 export default menu;
