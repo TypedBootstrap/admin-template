@@ -28,7 +28,7 @@ const Header = () => {
     };
 
     return (
-        <header>
+        <header className="header">
             <Navbar color="primary-dark" dark expand sticky="top">
                 <NavbarBrand className="o-hidden">React Admin</NavbarBrand>
                 <Button

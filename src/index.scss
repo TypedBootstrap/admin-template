@@ -14,11 +14,15 @@
 // Import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Import Custom SCSS
-@import "./scss/components/App";
-@import "./scss/components/IconCard";
-@import "./scss/components/Navigation";
-@import "./scss/components/Page";
+// Cards
+@import "./scss/components/cards/icon-card";
+
+// Layout
+@import "./scss/components/layout/base";
+@import "./scss/components/layout/footer";
+@import "./scss/components/layout/header";
+@import "./scss/components/layout/sidebar";
+
+
+
 @import "./scss/components/PageLoader";
-@import "./scss/components/Sidebar";
-@import "./scss/components/StickyFooter";

@@ -9,14 +9,12 @@ import store from 'store';
  * App
  */
 const App = () => (
-    <div className="App">
-        <Provider store={store}>
-            <HashRouter>
-                <Routes />
-                <Modal />
-            </HashRouter>
-        </Provider>
-    </div>
+    <Provider store={store}>
+        <HashRouter>
+            <Routes />
+            <Modal />
+        </HashRouter>
+    </Provider>
 );
 
 export default App;

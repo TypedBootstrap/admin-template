@@ -9,7 +9,7 @@ const Base = ({ children }) => {
     const { sidebarToggled } = useSelector(state => state.settings);
 
     return (
-        <div className={classnames('Page', { 'sidebar-toggled': sidebarToggled })}>
+        <div className={classnames('base', { 'sidebar-toggled': sidebarToggled })}>
             <Header />
             <div className="wrapper">
                 <Sidebar />

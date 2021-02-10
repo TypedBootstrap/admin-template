@@ -6,24 +6,22 @@ import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter } from 'reactstrap';
 
 const IconCard = ({ color, icon, linkText, path, title }) => (
-    <div className="IconCard">
-        <Card color={color} className="o-hidden h-100">
-            <CardBody>
-                {icon && (
-                    <div className="card-body-icon">
-                        <FontAwesomeIcon icon={icon} fixedWidth />
-                    </div>
-                )}
-                <div className="mr-5">{title}</div>
-            </CardBody>
-            <CardFooter className="text-white clearfix small z-1" tag={Link} to={path}>
-                <span className="float-left">{linkText}</span>
-                <span className="float-right">
-                    <FontAwesomeIcon icon={faAngleRight} />
-                </span>
-            </CardFooter>
-        </Card>
-    </div>
+    <Card color={color} className="icon-card o-hidden h-100">
+        <CardBody>
+            {icon && (
+                <div className="card-body-icon">
+                    <FontAwesomeIcon icon={icon} fixedWidth />
+                </div>
+            )}
+            <div className="mr-5">{title}</div>
+        </CardBody>
+        <CardFooter className="text-white clearfix small z-1" tag={Link} to={path}>
+            <span className="float-left">{linkText}</span>
+            <span className="float-right">
+                <FontAwesomeIcon icon={faAngleRight} />
+            </span>
+        </CardFooter>
+    </Card>
 );
 
 IconCard.propTypes = {
