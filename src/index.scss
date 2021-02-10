@@ -17,12 +17,11 @@
 // Cards
 @import "./scss/components/cards/icon-card";
 
+// Common
+@import "./scss/components//common/page-loader";
+
 // Layout
 @import "./scss/components/layout/base";
 @import "./scss/components/layout/footer";
 @import "./scss/components/layout/header";
 @import "./scss/components/layout/sidebar";
-
-
-
-@import "./scss/components/PageLoader";
