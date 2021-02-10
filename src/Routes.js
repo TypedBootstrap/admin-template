@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import Base from 'components/Layout/Base';
+import { Base } from 'components/layout';
 import PageLoader from 'components/PageLoader';
 import routes from 'config/routes';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
