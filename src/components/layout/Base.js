@@ -1,17 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import classnames from 'classnames';
-import { Navigation, Sidebar, StickyFooter } from 'components/layout';
+import { useSelector } from 'react-redux';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import StickyFooter from './StickyFooter';
 
-/**
- * Page
- */
-const Page = ({ children }) => {
+const Base = ({ children }) => {
     const { sidebarToggled } = useSelector(state => state.settings);
 
     return (
         <div className={classnames('Page', { 'sidebar-toggled': sidebarToggled })}>
-            <Navigation />
+            <Header />
             <div className="wrapper">
                 <Sidebar />
                 <div className="content-wrapper">
@@ -23,4 +22,4 @@ const Page = ({ children }) => {
     );
 };
 
-export default Page;
+export default Base;

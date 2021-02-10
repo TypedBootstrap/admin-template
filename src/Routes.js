@@ -1,18 +1,15 @@
 import React, { Suspense } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Page from 'components/Page';
+import Base from 'components/Layout/Base';
 import PageLoader from 'components/PageLoader';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import routes from 'config/routes';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-/**
- * Routes
- */
 const Routes = ({ location }) => {
     const currentLocation = location.pathname.split('/')[1] || '/';
 
     return (
-        <Page>
+        <Base>
             <TransitionGroup>
                 <CSSTransition
                     key={currentLocation}
@@ -36,7 +33,7 @@ const Routes = ({ location }) => {
                     </div>
                 </CSSTransition>
             </TransitionGroup>
-        </Page>
+        </Base>
     );
 };
 

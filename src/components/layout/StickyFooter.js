@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 
-/**
- * Sticky Footer
- */
 const StickyFooter = () => (
     <footer className="StickyFooter">
         <Container className="my-auto">

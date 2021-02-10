@@ -1,5 +1,9 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classnames from 'classnames';
+import menu from 'config/menu';
 import { useSelector } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 import {
     DropdownItem,
     DropdownMenu,
@@ -9,10 +13,6 @@ import {
     NavLink,
     UncontrolledDropdown
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, withRouter } from 'react-router-dom';
-import classnames from 'classnames';
-import menu from 'config/menu';
 
 /**
  * Sidebar Item
