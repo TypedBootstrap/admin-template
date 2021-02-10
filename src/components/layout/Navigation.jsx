@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toggleSetting } from 'store/actions';
 import {
     Badge,
@@ -21,11 +21,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /**
  * Navigation
  */
-const Navigation = ({ toggleSetting }) => {
+const Navigation = () => {
+    const dispatch = useDispatch();
+
     const toggleSidebar = e => {
         e.preventDefault();
 
-        toggleSetting('sidebarToggled');
+        dispatch(toggleSetting('sidebarToggled'));
     };
 
     return (
@@ -89,4 +91,4 @@ const Navigation = ({ toggleSetting }) => {
     );
 };
 
-export default connect(null, { toggleSetting })(Navigation);
+export default Navigation;

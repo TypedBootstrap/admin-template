@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     DropdownItem,
     DropdownMenu,
@@ -68,7 +68,9 @@ const SidebarSubMenuItemHeading = ({ heading }) => (
 /**
  * Sidebar
  */
-const Sidebar = ({ location, toggled }) => {
+const Sidebar = ({ location }) => {
+    const { sidebarToggled } = useSelector(state => state.settings);
+
     const isRouteActive = paths => {
         paths = Array.isArray(paths) ? paths : [paths];
         if (paths.indexOf(location.pathname) > -1) {
@@ -83,7 +85,7 @@ const Sidebar = ({ location, toggled }) => {
     };
 
     return (
-        <div className={classnames('sidebar', { toggled })}>
+        <div className={classnames('sidebar', { toggled: sidebarToggled })}>
             <Nav navbar>
                 {menu.map((item, i) => {
                     if (!item.subMenu) {
@@ -103,6 +105,4 @@ const Sidebar = ({ location, toggled }) => {
     );
 };
 
-const mapStateToProps = store => ({ toggled: store.settings.sidebarToggled });
-
-export default connect(mapStateToProps)(withRouter(Sidebar));
+export default withRouter(Sidebar);

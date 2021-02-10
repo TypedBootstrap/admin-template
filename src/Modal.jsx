@@ -1,12 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { hideModal } from 'store/actions';
 import modals from 'config/modals';
+import { useDispatch, useSelector } from 'react-redux';
+import { hideModal } from 'store/actions';
 
 /**
  * Modal
  */
-const Modal = ({ isOpen, modalProps, modalType, hideModal }) => {
+const Modal = () => {
+    const dispatch = useDispatch();
+    const { isOpen, modalProps, modalType } = useSelector(state => state.modal);
+
     if (!modalType) {
         return null;
     }
@@ -17,9 +20,7 @@ const Modal = ({ isOpen, modalProps, modalType, hideModal }) => {
         return null;
     }
 
-    return <Modal isOpen={isOpen} toggle={hideModal} {...modalProps} />;
+    return <Modal isOpen={isOpen} toggle={() => dispatch(hideModal())} {...modalProps} />;
 };
 
-const mapStateToProps = store => ({ ...store.modal });
-
-export default connect(mapStateToProps, { hideModal })(Modal);
+export default Modal;
