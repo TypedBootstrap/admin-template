@@ -1,10 +1,10 @@
 import { CHANGE_SETTING, TOGGLE_SETTING } from 'config/actions';
 
 const INITIAL_STATE = {
-    sidebarToggled: false
+    sidebarToggled: false,
 };
 
-export default (state = INITIAL_STATE, action) => {
+const settingsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case CHANGE_SETTING:
             return { ...state, [action.payload.name]: action.payload.value };
@@ -16,3 +16,5 @@ export default (state = INITIAL_STATE, action) => {
             return state;
     }
 };
+
+export default settingsReducer;

@@ -3,10 +3,10 @@ import { HIDE_MODAL, OPEN_MODAL } from 'config/actions';
 const INITIAL_STATE = {
     isOpen: false,
     modalProps: {},
-    modalType: null
+    modalType: null,
 };
 
-export default (state = INITIAL_STATE, action) => {
+const modalReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case HIDE_MODAL:
             return INITIAL_STATE;
@@ -16,10 +16,12 @@ export default (state = INITIAL_STATE, action) => {
                 ...INITIAL_STATE,
                 isOpen: true,
                 modalProps: action.payload.modalProps,
-                modalType: action.payload.modalType
+                modalType: action.payload.modalType,
             };
 
         default:
             return state;
     }
 };
+
+export default modalReducer;
