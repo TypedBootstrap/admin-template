@@ -1,13 +1,10 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import Routes from 'Routes';
 import Modal from 'Modal';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import Routes from 'Routes';
 import store from 'store';
 
-/**
- * App
- */
 const App = () => (
     <Provider store={store}>
         <HashRouter>
