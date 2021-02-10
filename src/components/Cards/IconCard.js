@@ -1,13 +1,10 @@
 import React from 'react';
-import { object, oneOfType, string } from 'prop-types';
-import { Card, CardBody, CardFooter } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { Card, CardBody, CardFooter } from 'reactstrap';
 
-/**
- * Icon Card
- */
 const IconCard = ({ color, icon, linkText, path, title }) => (
     <div className="IconCard">
         <Card color={color} className="o-hidden h-100">
@@ -30,11 +27,11 @@ const IconCard = ({ color, icon, linkText, path, title }) => (
 );
 
 IconCard.propTypes = {
-    color: string,
-    icon: oneOfType([object, string]),
-    linkText: string,
-    path: string.isRequired,
-    title: string.isRequired
+    color: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    linkText: PropTypes.string,
+    path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
 };
 
 IconCard.defaultProps = {
