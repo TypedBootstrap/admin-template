@@ -1,10 +1,7 @@
 import React from 'react';
-import { bool, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-/**
- * Alert Modal
- */
 const AlertModal = ({ closeColor, closeText, isOpen, message, title, toggle }) => (
     <Modal className="AlertModal" isOpen={isOpen}>
         {title && <ModalHeader>{title}</ModalHeader>}
@@ -18,12 +15,12 @@ const AlertModal = ({ closeColor, closeText, isOpen, message, title, toggle }) =
 );
 
 AlertModal.propTypes = {
-    closeColor: string,
-    closeText: string,
-    isOpen: bool,
-    message: string,
-    title: string,
-    toggle: func.isRequired
+    closeColor: PropTypes.string,
+    closeText: PropTypes.string,
+    isOpen: PropTypes.bool,
+    message: PropTypes.string,
+    title: PropTypes.string,
+    toggle: PropTypes.func.isRequired
 };
 
 AlertModal.defaultProps = {

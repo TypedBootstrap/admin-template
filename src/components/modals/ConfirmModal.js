@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ConfirmModal = ({
@@ -28,15 +28,15 @@ const ConfirmModal = ({
 );
 
 ConfirmModal.propTypes = {
-    closeColor: string,
-    closeText: string,
-    confirmAction: func.isRequired,
-    confirmColor: string,
-    confirmText: string,
-    isOpen: bool,
-    message: string,
-    title: string,
-    toggle: func.isRequired
+    closeColor: PropTypes.string,
+    closeText: PropTypes.string,
+    confirmAction: PropTypes.func.isRequired,
+    confirmColor: PropTypes.string,
+    confirmText: PropTypes.string,
+    isOpen: PropTypes.bool,
+    message: PropTypes.string,
+    title: PropTypes.string,
+    toggle: PropTypes.func.isRequired
 };
 
 ConfirmModal.defaultProps = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const DeleteModal = ({
@@ -28,15 +28,15 @@ const DeleteModal = ({
 );
 
 DeleteModal.propTypes = {
-    closeColor: string,
-    closeText: string,
-    deleteAction: func.isRequired,
-    deleteColor: string,
-    deleteText: string,
-    isOpen: bool,
-    message: string.isRequired,
-    title: string.isRequired,
-    toggle: func.isRequired
+    closeColor: PropTypes.string,
+    closeText: PropTypes.string,
+    deleteAction: PropTypes.func.isRequired,
+    deleteColor: PropTypes.string,
+    deleteText: PropTypes.string,
+    isOpen: PropTypes.bool,
+    message: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    toggle: PropTypes.func.isRequired
 };
 
 DeleteModal.defaultProps = {
