@@ -13,7 +13,7 @@ const ConfirmModal = ({
     title,
     toggle
 }) => (
-    <Modal className="ConfirmModal" isOpen={isOpen}>
+    <Modal isOpen={isOpen}>
         {title && <ModalHeader>{title}</ModalHeader>}
         {message && <ModalBody>{message}</ModalBody>}
         <ModalFooter>

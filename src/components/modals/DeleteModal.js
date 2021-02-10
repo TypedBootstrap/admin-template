@@ -13,7 +13,7 @@ const DeleteModal = ({
     title,
     toggle
 }) => (
-    <Modal className="DeleteModal" isOpen={isOpen} toggle={toggle}>
+    <Modal isOpen={isOpen} toggle={toggle}>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>{message}</ModalBody>
         <ModalFooter>

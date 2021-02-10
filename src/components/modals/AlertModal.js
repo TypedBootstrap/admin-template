@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const AlertModal = ({ closeColor, closeText, isOpen, message, title, toggle }) => (
-    <Modal className="AlertModal" isOpen={isOpen}>
+    <Modal isOpen={isOpen}>
         {title && <ModalHeader>{title}</ModalHeader>}
         {message && <ModalBody>{message}</ModalBody>}
         <ModalFooter>
