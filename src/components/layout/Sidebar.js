@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
-import menu from 'config/menu';
 import { useSelector } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import {
@@ -13,6 +12,7 @@ import {
     NavLink,
     UncontrolledDropdown
 } from 'reactstrap';
+import Menu from '../../Menu';
 
 /**
  * Sidebar Item
@@ -87,7 +87,7 @@ const Sidebar = ({ location }) => {
     return (
         <div className={classnames('sidebar', { toggled: sidebarToggled })}>
             <Nav navbar>
-                {menu.map((item, i) => {
+                {Menu.map((item, i) => {
                     if (!item.subMenu) {
                         const isActive = isRouteActive(item.path);
 

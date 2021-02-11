@@ -1,4 +1,4 @@
-const menu = [
+const Menu = [
     {
         name: 'Dashboard',
         icon: 'tachometer-alt',
@@ -19,4 +19,4 @@ const menu = [
     }
 ];
 
-export default menu;
+export default Menu;
