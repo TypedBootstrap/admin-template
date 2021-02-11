@@ -1,11 +1,14 @@
 import React from 'react';
-import modals from 'config/modals';
+import { AlertModal, ConfirmModal, DeleteModal } from 'components/modals';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideModal } from 'store/actions';
 
-/**
- * Modal
- */
+const Modals = {
+    alert: AlertModal,
+    confirm: ConfirmModal,
+    delete: DeleteModal
+};
+
 const Modal = () => {
     const dispatch = useDispatch();
     const { isOpen, modalProps, modalType } = useSelector(state => state.modal);
@@ -14,7 +17,7 @@ const Modal = () => {
         return null;
     }
 
-    const Modal = modals[modalType];
+    const Modal = Modals[modalType];
 
     if (typeof Modal === 'undefined') {
         return null;
