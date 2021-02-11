@@ -9,6 +9,21 @@ const Menu = [
         icon: 'folder',
         subMenu: [
             {
+                heading: 'Login Screens:'
+            },
+            {
+                name: 'Login',
+                path: '/login'
+            },
+            {
+                name: 'Register',
+                path: '/register'
+            },
+            {
+                name: 'Forgot Password',
+                path: '/forgot-password'
+            },
+            {
                 heading: 'Other Pages:'
             },
             {
