@@ -1,32 +1,33 @@
-import React, { Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { PageLoader } from 'components/common';
 import { Base } from 'components/layout';
-import routes from 'config/routes';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+// Used to render a lazy component with react-router
+const waitFor = Tag => props => <Tag {...props} />;
+
+const BlankPage = lazy(() => import('pages/BlankPage'));
+const IndexPage = lazy(() => import('pages/IndexPage'));
+
 const Routes = ({ location }) => {
-    const currentLocation = location.pathname.split('/')[1] || '/';
+    const currentKey = location.pathname.split('/')[1] || '/';
+    const timeout = { enter: 500, exit: 500 };
+    const animationName = 'fade-in';
 
     return (
         <Base>
             <TransitionGroup>
                 <CSSTransition
-                    key={currentLocation}
-                    classNames="fade-in"
+                    key={currentKey}
+                    classNames={animationName}
                     exit={false}
-                    timeout={{ enter: 500, exit: 500 }}>
+                    timeout={timeout}>
                     <div>
                         <Suspense fallback={<PageLoader />}>
                             <Switch location={location}>
-                                {routes.map(route => (
-                                    <Route
-                                        key={route.key}
-                                        component={route.component}
-                                        path={route.path}
-                                        exact={route.exact}
-                                    />
-                                ))}
+                                <Route path="/" component={waitFor(IndexPage)} exact />
+                                <Route path="/blank" component={waitFor(BlankPage)} />
                                 <Redirect to="/" />
                             </Switch>
                         </Suspense>

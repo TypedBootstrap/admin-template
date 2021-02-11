@@ -2,9 +2,6 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Container } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-/**
- * Blank Page
- */
 const BlankPage = () => (
     <div className="BlankPage">
         <Container fluid>

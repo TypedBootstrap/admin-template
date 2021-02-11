@@ -13,9 +13,6 @@ import {
 import { IconCard } from 'components/cards';
 import { Link } from 'react-router-dom';
 
-/**
- * Index Page
- */
 const IndexPage = () => (
     <div className="IndexPage">
         <Container fluid>
