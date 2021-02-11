@@ -1,7 +1,7 @@
 import React from 'react';
-import { AlertModal, ConfirmModal, DeleteModal } from 'components/modals';
+import { AlertModal, ConfirmModal, DeleteModal } from './components/modals';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideModal } from 'store/actions';
+import { hideModal } from './store/actions';
 
 const Modals = {
     alert: AlertModal,

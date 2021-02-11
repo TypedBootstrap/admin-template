@@ -1,4 +1,4 @@
-import { CHANGE_SETTING, TOGGLE_SETTING } from 'constants/actions';
+import { CHANGE_SETTING, TOGGLE_SETTING } from '../../constants/actions';
 
 const INITIAL_STATE = {
     sidebarToggled: false

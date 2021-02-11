@@ -16,7 +16,7 @@ import {
     NavbarBrand,
     UncontrolledDropdown
 } from 'reactstrap';
-import { toggleSetting } from 'store/actions';
+import { toggleSetting } from '../../store/actions';
 
 const Header = () => {
     const dispatch = useDispatch();

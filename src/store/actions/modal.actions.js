@@ -1,4 +1,4 @@
-import { HIDE_MODAL, OPEN_MODAL } from 'constants/actions';
+import { HIDE_MODAL, OPEN_MODAL } from '../../constants/actions';
 
 /**
  * Open a modal by type

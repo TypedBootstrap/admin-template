@@ -10,7 +10,7 @@ import {
     Row,
     Table
 } from 'reactstrap';
-import { IconCard } from 'components/cards';
+import { IconCard } from '../components/cards';
 import { Link } from 'react-router-dom';
 
 const IndexPage = () => (

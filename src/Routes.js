@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from 'react';
-import { PageLoader } from 'components/common';
-import { Base } from 'components/layout';
+import { PageLoader } from './components/common';
+import { Base } from './components/layout';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // Used to render a lazy component with react-router
 const waitFor = Tag => props => <Tag {...props} />;
 
-const BlankPage = lazy(() => import('pages/BlankPage'));
-const IndexPage = lazy(() => import('pages/IndexPage'));
+const BlankPage = lazy(() => import('./pages/BlankPage'));
+const IndexPage = lazy(() => import('./pages/IndexPage'));
 
 const Routes = ({ location }) => {
     const currentKey = location.pathname.split('/')[1] || '/';
