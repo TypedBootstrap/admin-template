@@ -1,12 +1,11 @@
-import React from 'react';
 import classnames from 'classnames';
 import { useSelector } from 'react-redux';
+import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import StickyFooter from './StickyFooter';
 
 const Base = ({ children }) => {
-    const { sidebarToggled } = useSelector(state => state.settings);
+    const { sidebarToggled } = useSelector(state => state.ui);
 
     return (
         <div className={classnames('base', { 'sidebar-toggled': sidebarToggled })}>
@@ -15,7 +14,7 @@ const Base = ({ children }) => {
                 <Sidebar />
                 <div className="content-wrapper">
                     {children}
-                    <StickyFooter />
+                    <Footer />
                 </div>
             </div>
         </div>

@@ -1,23 +1,22 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { FormLabelGroup } from '../common';
 
 const LoginForm = () => (
     <Form>
         <FormGroup>
-            <FormLabelGroup>
+            <div className="form-label-group">
                 <Input
                     type="email"
                     id="inputEmail"
                     placeholder="Email address"
                     required="required"
+                    autoFocus
                 />
                 <Label for="inputEmail">Email address</Label>
-            </FormLabelGroup>
+            </div>
         </FormGroup>
         <FormGroup>
-            <FormLabelGroup>
+            <div className="form-label-group">
                 <Input
                     type="password"
                     id="inputPassword"
@@ -25,15 +24,15 @@ const LoginForm = () => (
                     required="required"
                 />
                 <Label for="inputPassword">Password</Label>
-            </FormLabelGroup>
+            </div>
         </FormGroup>
         <FormGroup check>
-            <Label check>
-                <Input type="checkbox" value="remember-me" />
+            <Input type="checkbox" name="check" id="exampleCheck" />
+            <Label for="exampleCheck" check>
                 Remember Password
             </Label>
         </FormGroup>
-        <Button tag={Link} color="primary" block to="/">
+        <Button tag={Link} block color="primary" to="/">
             Login
         </Button>
     </Form>

@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import modal from './modal.reducer';
-import settings from './settings.reducer';
+import ui from './ui.reducer';
 
-export default combineReducers({ modal, settings });
+export default combineReducers({ ui });

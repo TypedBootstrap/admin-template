@@ -1,8 +1,6 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 import { useSelector } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
 import {
     DropdownItem,
     DropdownMenu,
@@ -12,97 +10,63 @@ import {
     NavLink,
     UncontrolledDropdown
 } from 'reactstrap';
-import Menu from '../../Menu';
+import { Link } from 'react-router-dom';
 
-/**
- * Sidebar Item
- */
-const SidebarItem = ({ active, item }) => (
-    <NavItem active={active}>
-        <NavLink tag={Link} to={item.path}>
-            <FontAwesomeIcon icon={item.icon} fixedWidth />
-            <span>{item.name}</span>
-        </NavLink>
-    </NavItem>
-);
-
-/**
- * Sidebar Sub Menu
- */
-const SidebarSubMenu = ({ active, item }) => (
-    <UncontrolledDropdown active={active} nav inNavbar>
-        <DropdownToggle nav>
-            <FontAwesomeIcon icon={item.icon} fixedWidth />
-            <span>{item.name}</span>
-        </DropdownToggle>
-        <DropdownMenu>
-            {item.subMenu.map((item, i) => {
-                if (item.heading) {
-                    return <SidebarSubMenuItemHeading key={i} heading={item.heading} />;
-                }
-
-                return <SidebarSubMenuItem key={i} item={item} />;
-            })}
-        </DropdownMenu>
-    </UncontrolledDropdown>
-);
-
-/**
- * Sidebar Sub Menu Item
- */
-const SidebarSubMenuItem = ({ item }) => (
-    <DropdownItem tag={Link} to={item.path}>
-        {item.name}
-    </DropdownItem>
-);
-
-/**
- * Sidebar Sub Menu Item Header
- */
-const SidebarSubMenuItemHeading = ({ heading }) => (
-    <DropdownItem tag="h6" header>
-        {heading}
-    </DropdownItem>
-);
-
-/**
- * Sidebar
- */
-const Sidebar = ({ location }) => {
-    const { sidebarToggled } = useSelector(state => state.settings);
-
-    const isRouteActive = paths => {
-        paths = Array.isArray(paths) ? paths : [paths];
-        if (paths.indexOf(location.pathname) > -1) {
-            return true;
-        }
-
-        return false;
-    };
-
-    const getSubMenuRoutes = item => {
-        return item.subMenu.map(({ path }) => path);
-    };
+const Sidebar = () => {
+    const { sidebarToggled } = useSelector(state => state.ui);
 
     return (
-        <div className={classnames('sidebar', { toggled: sidebarToggled })}>
-            <Nav navbar>
-                {Menu.map((item, i) => {
-                    if (!item.subMenu) {
-                        const isActive = isRouteActive(item.path);
-
-                        return <SidebarItem key={i} active={isActive} item={item} />;
-                    } else if (item.subMenu) {
-                        const isActive = isRouteActive(getSubMenuRoutes(item));
-
-                        return <SidebarSubMenu key={i} active={isActive} item={item} />;
-                    }
-
-                    return null;
-                })}
-            </Nav>
-        </div>
+        <Nav className={classnames('sidebar', { toggled: sidebarToggled })} navbar>
+            <NavItem active>
+                <NavLink tag={Link} to="/" >
+                    <FontAwesomeIcon icon="tachometer-alt" fixedWidth />
+                    <span>Dashboard</span>
+                </NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                    <FontAwesomeIcon icon="folder" fixedWidth />
+                    <span>Pages</span>
+                </DropdownToggle>
+                <DropdownMenu right>
+                    <DropdownItem tag="h6" header>
+                        Login Screens:
+                    </DropdownItem>
+                    <DropdownItem tag={Link} to="/login">
+                        Login
+                    </DropdownItem>
+                    <DropdownItem tag={Link} to="/register">
+                        Register
+                    </DropdownItem>
+                    <DropdownItem tag={Link} to="/forgot-password">
+                        Forgot Password
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem tag="h6" header>
+                        Other Pages:
+                    </DropdownItem>
+                    <DropdownItem tag={Link} to="/404">
+                        404 Page
+                    </DropdownItem>
+                    <DropdownItem tag={Link} to="/blank">
+                        Blank Page
+                    </DropdownItem>
+                </DropdownMenu>
+            </UncontrolledDropdown>
+            <NavItem>
+                <NavLink tag={Link} to="/charts">
+                    <FontAwesomeIcon icon="chart-area" fixedWidth />
+                    <span>Charts</span>
+                </NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="/tables">
+                    <FontAwesomeIcon icon="table" fixedWidth />
+                    <span>Tables</span>
+                </NavLink>
+            </NavItem>
+        </Nav>
     );
 };
 
-export default withRouter(Sidebar);
+export default Sidebar;

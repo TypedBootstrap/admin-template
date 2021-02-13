@@ -1,0 +1,115 @@
+.navbar-nav {
+  .form-inline .input-group {
+    width: 100%;
+  }
+
+  .nav-item {
+    &.active {
+      .nav-link {
+        color: $white;
+      }
+    }
+
+    &.dropdown {
+      .dropdown-toggle {
+        &::after {
+          border: 0;
+          content: "\f105";
+          float: right;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          text-align: center;
+          vertical-align: 0;
+          width: 1rem;
+        }
+      }
+      &.show {
+        .dropdown-toggle::after {
+          content: "\f107";
+        }
+      }
+      &.no-arrow {
+        .dropdown-toggle::after {
+          display: none;
+        }
+      }
+    }
+    .nav-link {
+      &:focus {
+        // remove outline for Safari and Firefox
+        outline: none;
+      }
+      .badge {
+        font-size: 0.5rem;
+        font-weight: 400;
+        margin-left: 0.75rem;
+        position: absolute;
+        top: 0.3rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form-inline .input-group {
+      width: auto;
+    }
+  }
+}
+
+.sidebar {
+  background-color: $gray-900;
+  min-height: calc(100vh - #{$navbar-base-height});
+  width: $sidebar-collapsed-width !important;
+  @include sidebar-icons;
+  .nav-item {
+    .nav-link {
+      color: fade-out($white, 0.5);
+      &:active,
+      &:focus,
+      &:hover {
+        color: fade-out($white, 0.25);
+      }
+    }
+  }
+  &.toggled {
+    overflow: hidden;
+    width: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: $sidebar-base-width !important;
+
+    .nav-item {
+      .nav-link {
+        display: block;
+        padding: 1rem;
+        text-align: left;
+        width: $sidebar-base-width;
+
+        span {
+          display: inline;
+          font-size: 1rem;
+        }
+      }
+
+      .dropdown-menu {
+        margin: 0 1rem;
+        position: static !important;
+        // Position fix for Firefox
+        top: 0;
+      }
+
+      &.dropdown .dropdown-toggle::after {
+        display: block;
+      }
+    }
+
+    &.toggled {
+      overflow: visible;
+      width: $sidebar-collapsed-width !important;
+      @include sidebar-icons;
+    }
+  }
+}

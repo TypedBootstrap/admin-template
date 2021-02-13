@@ -1,2 +1,1 @@
-export * from './modal.actions';
-export * from './settings.actions';
+export * from './ui.actions';

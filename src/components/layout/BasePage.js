@@ -1,7 +1,3 @@
-import React from 'react';
-
-const BasePage = ({ children }) => {
-    return <div className="wrapper">{children}</div>;
-};
+const BasePage = ({ children }) => <div>{children}</div>;
 
 export default BasePage;
