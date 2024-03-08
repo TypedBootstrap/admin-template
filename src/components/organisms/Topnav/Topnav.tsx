@@ -57,7 +57,9 @@ const Topnav: React.FC<TopnavProps> = () => {
                         <DropdownItem>Option 1</DropdownItem>
                         <DropdownItem>Option 2</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem tag={Link} to="/login">Logout</DropdownItem>
+                        <DropdownItem tag={Link} to="/login">
+                            Logout
+                        </DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
             </Nav>
