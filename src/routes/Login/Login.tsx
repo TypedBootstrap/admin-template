@@ -1,10 +1,20 @@
 import React from 'react';
 import { LoginPage } from '../../components/pages';
+import { LoginFormHelpers, LoginFormValues } from '../../components/organisms';
 
 export interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-    return <LoginPage />;
+    const initialLoginFormValues: LoginFormValues = {
+        email: '',
+        password: ''
+    };
+
+    const onLoginFormSubmit = (_: LoginFormValues, __: LoginFormHelpers): void => {
+        // TODO: Implement login
+    };
+
+    return <LoginPage {...{ initialLoginFormValues, onLoginFormSubmit }} />;
 };
 
 export default Login;

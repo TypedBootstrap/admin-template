@@ -2,11 +2,14 @@ import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import { Footer, LoginForm } from '../../organisms';
+import { Footer, LoginForm, LoginFormHelpers, LoginFormValues } from '../../organisms';
 
-export interface LoginPageProps {}
+export interface LoginPageProps {
+    initialLoginFormValues: LoginFormValues;
+    onLoginFormSubmit: (values: LoginFormValues, helpers: LoginFormHelpers) => void;
+}
 
-const LoginPage: React.FC<LoginPageProps> = () => (
+const LoginPage: React.FC<LoginPageProps> = props => (
     <AuthenticationLayout footer={<Footer />}>
         <main>
             <Container>
@@ -17,7 +20,10 @@ const LoginPage: React.FC<LoginPageProps> = () => (
                                 <h3 className="text-center font-weight-light my-4">Login</h3>
                             </CardHeader>
                             <CardBody>
-                                <LoginForm />
+                                <LoginForm
+                                    initialValues={props.initialLoginFormValues}
+                                    onSubmit={props.onLoginFormSubmit}
+                                />
                             </CardBody>
                             <CardFooter className="text-center py-3">
                                 <Link className="small" to="/register">
