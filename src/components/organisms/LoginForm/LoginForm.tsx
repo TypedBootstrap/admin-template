@@ -34,7 +34,7 @@ const LoginForm: React.FC<LoginFormProps> = props => (
                 <FormGroup className="mb-3" floating>
                     <Input
                         id="password"
-                        type="email"
+                        type="password"
                         name="password"
                         onBlur={form.handleBlur}
                         onChange={form.handleChange}
