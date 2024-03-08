@@ -50,3 +50,5 @@ See the official [Prettier](https://prettier.io) website for more information an
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Finally, to learn more about the [styles](https://github.com/TypedBootstrap/admin-styles) and [components](https://github.com/TypedBootstrap/admin-components) used in this template checkout their respective documentation.
