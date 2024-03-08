@@ -2,11 +2,14 @@ import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import { Footer, RegisterForm } from '../../organisms';
+import { Footer, RegisterForm, RegisterFormHelpers, RegisterFormValues } from '../../organisms';
 
-export interface RegisterPageProps {}
+export interface RegisterPageProps {
+    initialRegisterFormValues: RegisterFormValues;
+    onRegisterFormSubmit: (values: RegisterFormValues, helpers: RegisterFormHelpers) => void;
+}
 
-const RegisterPage: React.FC<RegisterPageProps> = () => (
+const RegisterPage: React.FC<RegisterPageProps> = props => (
     <AuthenticationLayout footer={<Footer />}>
         <main>
             <Container>
@@ -19,7 +22,10 @@ const RegisterPage: React.FC<RegisterPageProps> = () => (
                                 </h3>
                             </CardHeader>
                             <CardBody>
-                                <RegisterForm />
+                                <RegisterForm
+                                    initialValues={props.initialRegisterFormValues}
+                                    onSubmit={props.onRegisterFormSubmit}
+                                />
                             </CardBody>
                             <CardFooter className="text-center py-3">
                                 <Link className="small" to="/login">
