@@ -28,7 +28,7 @@ const Topnav: React.FC<TopnavProps> = () => {
     };
 
     return (
-        <Navbar color="dark" dark expand>
+        <Navbar className="topnav" color="dark" dark expand>
             <NavbarBrand tag={Link} to="/">
                 Start Bootstrap
             </NavbarBrand>
