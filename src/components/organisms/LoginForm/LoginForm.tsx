@@ -19,7 +19,7 @@ const LoginForm: React.FC<LoginFormProps> = props => (
     <Formik initialValues={props.initialValues} onSubmit={props.onSubmit}>
         {form => (
             <Form onSubmit={form.handleSubmit}>
-                <FormGroup className="mb-3" floating>
+                <FormGroup floating>
                     <Input
                         id="email"
                         type="email"
@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = props => (
                     />
                     <Label for="email">Email address</Label>
                 </FormGroup>
-                <FormGroup className="mb-3" floating>
+                <FormGroup floating>
                     <Input
                         id="password"
                         type="password"
