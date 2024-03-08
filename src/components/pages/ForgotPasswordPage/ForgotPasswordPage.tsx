@@ -2,11 +2,22 @@ import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import { Footer, PasswordRecoveryForm } from '../../organisms';
+import {
+    Footer,
+    PasswordRecoveryForm,
+    PasswordRecoveryFormHelpers,
+    PasswordRecoveryFormValues
+} from '../../organisms';
 
-export interface ForgotPasswordPageProps {}
+export interface ForgotPasswordPageProps {
+    initialPasswordRecoveryFormValues: PasswordRecoveryFormValues;
+    onPasswordRecoveryFormSubmit: (
+        values: PasswordRecoveryFormValues,
+        helpers: PasswordRecoveryFormHelpers
+    ) => void;
+}
 
-const ForgotPasswordPage: React.FC<ForgotPasswordPageProps> = () => (
+const ForgotPasswordPage: React.FC<ForgotPasswordPageProps> = props => (
     <AuthenticationLayout footer={<Footer />}>
         <main>
             <Container>
@@ -23,7 +34,10 @@ const ForgotPasswordPage: React.FC<ForgotPasswordPageProps> = () => (
                                     Enter your email address and we will send you a link to reset
                                     your Password.
                                 </div>
-                                <PasswordRecoveryForm />
+                                <PasswordRecoveryForm
+                                    initialValues={props.initialPasswordRecoveryFormValues}
+                                    onSubmit={props.onPasswordRecoveryFormSubmit}
+                                />
                             </CardBody>
                             <CardFooter className="text-center py-3">
                                 <Link className="small" to="/register">
