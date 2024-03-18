@@ -10,6 +10,10 @@ export { default as HomePage } from './HomePage';
 export * from './LoginPage';
 export { default as LoginPage } from './LoginPage';
 
+// No Match Page
+export * from './NoMatchPage';
+export { default as NoMatchPage } from './NoMatchPage';
+
 // Register Page
 export * from './RegisterPage';
 export { default as RegisterPage } from './RegisterPage';

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ForgotPassword, Home, Login, Register } from './routes';
+import { ForgotPassword, Home, Login, NoMatch, Register } from './routes';
 
 const router = createBrowserRouter([
     {
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     {
         path: '/forgot-password',
         element: <ForgotPassword />
+    },
+    {
+        path: '*',
+        element: <NoMatch />
     }
 ]);
 
