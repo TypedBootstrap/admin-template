@@ -25,5 +25,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = props => {
         callback();
     };
 
-    return <AuthContext.Provider value={{ user, login, logout }}>{props.children}</AuthContext.Provider>;
+    return (
+        <AuthContext.Provider value={{ user, login, logout }}>
+            {props.children}
+        </AuthContext.Provider>
+    );
 };
