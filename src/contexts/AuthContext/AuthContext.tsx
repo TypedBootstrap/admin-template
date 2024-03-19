@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface AuthContextProps {
-    user: any;
+    user: any | null;
     login: (user: any, callback: VoidFunction) => void;
     logout: (callback: VoidFunction) => void;
 }
 
-export const AuthContext = React.createContext<AuthContextProps>(null!);
+export const AuthContext = React.createContext<AuthContextProps>({} as AuthContextProps);
 
 interface AuthProviderProps {
     children: React.ReactNode;
