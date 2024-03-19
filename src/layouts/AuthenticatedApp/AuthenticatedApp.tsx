@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserProvider } from 'contexts';
 import { useAuth } from 'hooks';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
@@ -17,7 +18,11 @@ const AuthenticatedApp: React.FC<AuthenticatedAppProps> = () => {
         return <Navigate to="/login" state={{ redirectedFrom }} replace />;
     }
 
-    return <Outlet />;
+    return (
+        <UserProvider>
+            <Outlet />
+        </UserProvider>
+    );
 };
 
 export default AuthenticatedApp;
