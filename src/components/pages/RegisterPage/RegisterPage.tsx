@@ -1,9 +1,9 @@
 import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
+import type { RegisterFormHelpers, RegisterFormValues } from 'components/organisms';
+import { Footer, RegisterForm } from 'components/organisms';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import type { RegisterFormHelpers, RegisterFormValues } from '../../organisms';
-import { Footer, RegisterForm } from '../../organisms';
 
 export interface RegisterPageProps {
     initialRegisterFormValues: RegisterFormValues;

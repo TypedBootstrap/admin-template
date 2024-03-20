@@ -1,9 +1,9 @@
 import React from 'react';
 import { DashboardLayout } from '@typedbootstrap/admin-components';
+import { Footer, Sidenav, Topnav, Widget } from 'components/organisms';
+import { useAppSelector } from 'hooks';
 import { Col, Container, Row } from 'reactstrap';
-import { useAppSelector } from '../../../hooks';
-import { selectSidebarToggled } from '../../../store/uiSlice';
-import { Footer, Sidenav, Topnav, Widget } from '../../organisms';
+import { selectSidebarToggled } from 'store/uiSlice';
 
 export interface HomePageProps {}
 

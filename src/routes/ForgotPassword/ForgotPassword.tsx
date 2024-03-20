@@ -1,9 +1,6 @@
 import React from 'react';
-import type {
-    PasswordRecoveryFormHelpers,
-    PasswordRecoveryFormValues
-} from '../../components/organisms';
-import { ForgotPasswordPage } from '../../components/pages';
+import type { PasswordRecoveryFormHelpers, PasswordRecoveryFormValues } from 'components/organisms';
+import { ForgotPasswordPage } from 'components/pages';
 
 export interface ForgotPasswordProps {}
 

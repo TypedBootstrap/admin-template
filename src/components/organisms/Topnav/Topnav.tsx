@@ -1,6 +1,7 @@
 import React from 'react';
 import { faBars, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAppDispatch } from 'hooks';
 import { Link } from 'react-router-dom';
 import {
     Button,
@@ -15,8 +16,7 @@ import {
     NavbarBrand,
     UncontrolledDropdown
 } from 'reactstrap';
-import { useAppDispatch } from '../../../hooks';
-import { uiActions } from '../../../store/uiSlice';
+import { uiActions } from 'store/uiSlice';
 
 export interface TopnavProps {}
 

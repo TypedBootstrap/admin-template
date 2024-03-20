@@ -1,9 +1,9 @@
 import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
+import type { LoginFormHelpers, LoginFormValues } from 'components/organisms';
+import { Footer, LoginForm } from 'components/organisms';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import type { LoginFormHelpers, LoginFormValues } from '../../organisms';
-import { Footer, LoginForm } from '../../organisms';
 
 export interface LoginPageProps {
     initialLoginFormValues: LoginFormValues;
