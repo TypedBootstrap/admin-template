@@ -1,5 +1,5 @@
 import React from 'react';
-import { RegisterFormHelpers, RegisterFormValues } from '../../components/organisms';
+import type { RegisterFormHelpers, RegisterFormValues } from '../../components/organisms';
 import { RegisterPage } from '../../components/pages';
 
 export interface RegisterProps {}

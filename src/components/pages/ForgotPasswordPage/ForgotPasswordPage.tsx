@@ -2,12 +2,8 @@ import React from 'react';
 import { AuthenticationLayout } from '@typedbootstrap/admin-components';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'reactstrap';
-import {
-    Footer,
-    PasswordRecoveryForm,
-    PasswordRecoveryFormHelpers,
-    PasswordRecoveryFormValues
-} from '../../organisms';
+import type { PasswordRecoveryFormHelpers, PasswordRecoveryFormValues } from '../../organisms';
+import { Footer, PasswordRecoveryForm } from '../../organisms';
 
 export interface ForgotPasswordPageProps {
     initialPasswordRecoveryFormValues: PasswordRecoveryFormValues;

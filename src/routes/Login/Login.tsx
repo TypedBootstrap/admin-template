@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoginPage } from '../../components/pages';
-import { LoginFormHelpers, LoginFormValues } from '../../components/organisms';
+import type { LoginFormHelpers, LoginFormValues } from '../../components/organisms';
 
 export interface LoginProps {}
 
