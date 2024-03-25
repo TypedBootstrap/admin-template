@@ -1,15 +1,14 @@
 import React from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ErrorLayout } from '@typedbootstrap/admin-components';
-import { Footer } from 'components/organisms';
+import { ErrorTemplate } from 'components/templates';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 export interface NoMatchPageProps {}
 
 const NoMatchPage: React.FC<NoMatchPageProps> = () => (
-    <ErrorLayout footer={<Footer />}>
+    <ErrorTemplate>
         <Container>
             <Row className="justify-content-center">
                 <Col lg="6">
@@ -23,7 +22,7 @@ const NoMatchPage: React.FC<NoMatchPageProps> = () => (
                 </Col>
             </Row>
         </Container>
-    </ErrorLayout>
+    </ErrorTemplate>
 );
 
 export default NoMatchPage;
