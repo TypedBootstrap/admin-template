@@ -14,7 +14,7 @@ const Login: React.FC<LoginProps> = () => {
     };
 
     const onLoginFormSubmit = (values: LoginFormValues, __: LoginFormHelpers): void => {
-        login(values, () => {})
+        login(values, () => {});
     };
 
     return <LoginPage {...{ initialLoginFormValues, onLoginFormSubmit }} />;
