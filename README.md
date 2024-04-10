@@ -8,23 +8,23 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -49,13 +49,13 @@ See the official [Prettier](https://prettier.io) website for more information an
 
 ### `docker build -t admin-template-app .`
 
-Creates a Docker image.\
+Creates a Docker image.
 
 Make sure to include the period at the end of the command to specify the build context. This command should be run from the root directory, where the Dockerfile is located.
 
 ### `docker run --name admin-template-app -p 8080:80 -d admin-template-app`
 
-Runs the container in detached mode and map port 8080 on your host machine to port 80 inside the container.\
+Runs the container in detached mode and map port 8080 on your host machine to port 80 inside the container.
 
 Open [http://localhost:8080](http://localhost:8080), or the appropriate host and port you specified, to view it in the browser.
 
