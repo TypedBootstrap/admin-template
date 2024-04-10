@@ -45,6 +45,20 @@ Formats the code, according to predefined rules in the `package.json`, using the
 
 See the official [Prettier](https://prettier.io) website for more information and docs.
 
+## Dockerizing
+
+### `docker build -t admin-template-app .`
+
+Creates a Docker image.\
+
+Make sure to include the period at the end of the command to specify the build context. This command should be run from the root directory, where the Dockerfile is located.
+
+### `docker run --name admin-template-app -p 8080:80 -d admin-template-app`
+
+Runs the container in detached mode and map port 8080 on your host machine to port 80 inside the container.\
+
+Open [http://localhost:8080](http://localhost:8080), or the appropriate host and port you specified, to view it in the browser.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
