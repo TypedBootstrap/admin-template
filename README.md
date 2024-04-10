@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You can see a demo of this template in action [right here](https://admin-template.typedbootstrap.com/)! Simply authenticate with the credentials `admin@typedbootstrap.com` and `password`.
+
 ## Available Scripts
 
 In the project directory, you can run:
