@@ -2,25 +2,23 @@ import React from 'react';
 import { DashboardLayout } from '@typedbootstrap/admin-components';
 import { Footer, Sidenav, Topnav } from 'components/organisms';
 import { useAppSelector } from 'hooks';
+import { Outlet } from 'react-router-dom';
 import { selectSidebarToggled } from 'store/uiSlice';
 
-export interface DefaultTemplateProps {
-    children?: React.ReactNode;
-}
+export interface DefaultProps {}
 
-const DefaultTemplate: React.FC<DefaultTemplateProps> = ({ children }) => {
+const Default: React.FC<DefaultProps> = () => {
     const sidebarToggled = useAppSelector(selectSidebarToggled);
 
     return (
         <DashboardLayout
             topnav={<Topnav />}
             sidenav={<Sidenav />}
-            sidenavToggled={sidebarToggled}
             footer={<Footer />}
-            topnavFixed>
-            <main>{children}</main>
+            sidenavToggled={sidebarToggled}>
+            <Outlet />
         </DashboardLayout>
     );
 };
 
-export default DefaultTemplate;
+export default Default;

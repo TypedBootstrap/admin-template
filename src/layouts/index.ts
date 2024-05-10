@@ -1,5 +1,14 @@
-export * from './AuthenticatedApp';
-export { default as AuthenticatedApp } from './AuthenticatedApp';
+export * from './Authenticated';
+export { default as Authenticated } from './Authenticated';
 
-export * from './UnauthenticatedApp';
-export { default as UnauthenticatedApp } from './UnauthenticatedApp';
+export * from './Authentication';
+export { default as Authentication } from './Authentication';
+
+export * from './Default';
+export { default as Default } from './Default';
+
+export * from './Error';
+export { default as Error } from './Error';
+
+export * from './Unauthenticated';
+export { default as Unauthenticated } from './Unauthenticated';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthenticatedApp, UnauthenticatedApp } from 'layouts';
+import { Authenticated, Authentication, Default, Error, Unauthenticated } from 'layouts';
 import { Route, Routes } from 'react-router-dom';
 import { ForgotPassword, Home, Login, NoMatch, Register } from './routes';
 
@@ -7,18 +7,24 @@ function App() {
     return (
         <Routes>
             {/* Authenticated routes */}
-            <Route element={<AuthenticatedApp />}>
-                <Route path="/" element={<Home />} />
+            <Route element={<Authenticated />}>
+                <Route element={<Default />}>
+                    <Route path="/" element={<Home />} />
+                </Route>
             </Route>
 
             {/* Unauthenticated routes */}
-            <Route element={<UnauthenticatedApp />}>
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
-                <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route element={<Unauthenticated />}>
+                <Route element={<Authentication />}>
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register />} />
+                    <Route path="forgot-password" element={<ForgotPassword />} />
+                </Route>
             </Route>
 
-            <Route path="*" element={<NoMatch />} />
+            <Route element={<Error />}>
+                <Route path="*" element={<NoMatch />} />
+            </Route>
         </Routes>
     );
 }

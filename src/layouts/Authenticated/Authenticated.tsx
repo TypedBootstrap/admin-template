@@ -3,9 +3,9 @@ import { UserProvider } from 'contexts';
 import { useAuth } from 'hooks';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-export interface AuthenticatedAppProps {}
+export interface AuthenticatedProps {}
 
-const AuthenticatedApp: React.FC<AuthenticatedAppProps> = () => {
+const Authenticated: React.FC<AuthenticatedProps> = () => {
     const auth = useAuth();
 
     const location = useLocation();
@@ -25,4 +25,4 @@ const AuthenticatedApp: React.FC<AuthenticatedAppProps> = () => {
     );
 };
 
-export default AuthenticatedApp;
+export default Authenticated;
